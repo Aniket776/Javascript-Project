@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+    <title>color switcher</title>
+    
+</head>
+    <body>
+        <h1>
+            <button class="button" id="yellow"></button>
+            <button class="button" id="red"></button>
+            <button class="button" id="skyblue"></button>
+            <button class="button" id="blue"></button>
+            
+            
+        </h1>
+        <h2>click any button  to change backgroundcolor</h2>
+    </body>
+    
+
+
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #yellow{
+        height: 70px;
+        width:70px;
+        background-color:yellow;
+        margin: 15px;
+    }
+    #red{
+        height: 70px;
+        width: 70px;
+        background-color: red;
+        margin: 15px;
+        
+
+    }
+    #skyblue{
+        height: 70px;
+        width: 70px;
+        background-color: skyblue;
+        margin: 15px;
+        
+    }
+
+    #blue {
+        height: 70px;
+        width: 70px;
+        background-color: blue;
+        margin: 15px;
+    }
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        text-align: center;
+        padding: 100px;
+        margin: 100px;
+        animation: animate 5s linear infinite;
+    
+    }
+   
+    
+
+</style>
+<script>
+    const buttons=document.querySelectorAll('.button');
+const body=document.querySelector('body');
+buttons.forEach(function(button){
+    button.addEventListener('click',function(s){
+       
+
+       
+        if(s.target.id=='red'){
+            body.style.backgroundColor='red';
+            
+        }
+        
+        if(s.target.id=='skyblue'){
+            body.style.backgroundColor='skyblue';
+        }
+         if(s.target.id=='yellow'){
+            body.style.backgroundColor='yellow';
+        }
+        if(s.target.id=='blue'){
+            body.style.backgroundColor='blue';
+        }
+
+
+    })
+
+});
+
+</script>

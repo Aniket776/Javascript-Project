@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        custom cursor
+
+    </title>
+
+</head>
+
+<body>
+    <div id="main">
+        <div class="cursor"></div>
+        <h1>CODETIME</h1>
+
+    </div>
+</body>
+
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+
+    }
+
+    #main {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cursor {
+        height: 20px;
+        width: 20px;
+        background-color: red;
+        border-radius: 40px;
+        position: absolute;
+    }
+
+    h1 {
+        font-size: 9vw;
+        font-weight: 500px;
+    }
+</style>
+<script>
+
+    var main = document.querySelector("#main");
+    var cur = document.querySelector(".cursor");
+
+    main.addEventListener("mousemove", function (dets) {
+        cur.style.left = dets.x + "px";
+        
+        cur.style.top = dets.y + "px";
+        setTimeout(function () {
+            cur.style.backgroundColor = "yellow";
+
+        }, 5000);
+        setTimeout(function () {
+            cur.style.backgroundColor = "skyblue";
+
+        }, 2000);
+
+    })
+    </script>
