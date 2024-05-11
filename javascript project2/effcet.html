@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <div class="el">
+            <h1>Image Effect</h1>
+            <img src="https://cdn.pixabay.com/photo/2023/10/26/04/53/car-8341712_1280.jpg">
+
+        </div>
+        <!-- <div class="el">
+            <h1>joe root</h1>
+            <img src="https://cdn.pixabay.com/photo/2023/09/21/14/15/background-8266762_1280.jpg">
+
+        </div>
+        <div class="el">
+            <h1>joe root</h1>
+            <img src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg">
+
+        </div>
+        <div class="el">
+            <h1>joe root</h1>
+            <img src="https://cdn.pixabay.com/photo/2016/11/29/04/19/ocean-1867285_1280.jpg">
+
+        </div> -->
+    </div>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Gilroy';
+        color: #fff;
+
+    }
+  
+    html,body{
+        height: 100%;
+        width: 100%;
+
+    }
+    #main{
+        height: 100%;
+        width: 100%;
+        background-color:#111;
+        position: relative;
+
+    }
+    .el{
+        height: 120px;
+        width: 100%;
+       /* border-bottom: 2px solid #fff; */
+       display: flex;
+       align-items: center;
+       justify-content:center;
+       position: relative;
+
+
+
+    }
+    .el h1{
+        font-size: 6vw;
+        position: relative;
+        z-index: 9;
+        mix-blend-mode:difference;
+        margin: 5px;
+        font-weight: lighter;
+       margin-top: 500px;
+
+
+
+    }
+    h1 :nth-child(1){
+        animation-delay: 0.4s;
+    }
+    .el img{
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        transition: all linear 0.3s;
+
+    }
+</style>
+<script>
+    var el=document.querySelectorAll(".el");
+    // var img=document.querySelector()
+    
+
+    el.forEach(function(val){
+        console.log(val.childNodes[2]);
+        
+        val.addEventListener("mouseenter",function(){
+           val.childNodes[3].style.opacity=1
+           val.childNodes[2].style.backgroundColor='yello';
+        });
+        val.addEventListener("mouseleave",function(){
+            val.childNodes[3].style.opacity=0
+            
+        });
+        val.addEventListener("mousemove",function(dets){
+            val.childNodes[3].style.left=dets.x+"px"
+            val.childNodes[3].style.top=dets.y+"px"
+            
+        });
+
+    })
+
+</script>
